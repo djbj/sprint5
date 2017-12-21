@@ -2,7 +2,7 @@
 
 For this company challenge it's time to focus more on how to build interfaces and more interactive and useful applications but also to wrap up everything you've learnt and build an application with both a frontend and a backend. This time we will work together with Kundo that builds smart tools for customer service. You're challenge will be to build a FAQ forum. 
 
-The forum will have two sides, one side where all the questions get posted for your customers to go and read questions and answers. And one admin interface where the customer support people can answer. Unlike previous tasks, the scope, design and functionality is up to you. Maybe you want the questions to be upvoted, sorted in a specific way or categorized – it's up to you. 
+The forum will have two sides, one side where all the questions get posted for your customers to go and read questions and answers. And one admin interface where the customer support personell can answer. Unlike previous tasks, the scope, design and functionality is up to you. Maybe you want the questions to be upvoted, sorted in a specific way or categorized – it's up to you. 
 
 **The basics that you need to have:**
 * A FAQ frontend that your customers can go to and view questions and answers. 
