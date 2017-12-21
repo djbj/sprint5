@@ -1,17 +1,19 @@
 # Company Project: Build a Forum
 
-For this company challenge it's time to focus more on how to build interfaces and more interactive and useful applications but also to wrap up everything you've learnt and build an application with both a frontend and a backend. This time we will work together with Kundo that builds smart tools for customer service. You're challenge will be to build a FAQ forum. 
+For this company challenge it's time to focus more on how to build interfaces and interactive, useful applications. Also it's a chance to wrap up everything you've learnt, and build an application with both a frontend and a backend. We'll be working together with Kundo - a company who builds smart tools for customer service. Your challenge will be to build a FAQ forum. 
 
-The forum will have two sides, one side where all the questions get posted for your customers to go and read questions and answers. And one admin interface where the customer support personell can answer. Unlike previous tasks, the scope, design and functionality is up to you. Maybe you want the questions to be upvoted, sorted in a specific way or categorized – it's up to you. 
+The forum needs two parts; one for visitors to ask questions and find answers, and another for customer support staff to write answers to questions. This task is completely open for you to decide the scope, design, and functionality. Maybe you want the questions to be upvoted, or sorted in a specific way, or categorized, or some other functionality – it's up to you and your company to decide.
 
 **The basics that you need to have:**
-* A FAQ frontend that your customers can go to and view questions and answers. 
-* A admin page where support personell can answer questions. 
+
+* An FAQ frontend where customers can go to and view questions and answers.
+* An admin page where support personel can answer questions.
 
 **Techniqual Requirements:** 
+
 * Fronend built in React
 * API in Express. 
-* MongoDB as database to store questions and answers. 
+* MongoDB as database to store questions and answers.
 
 ## How to complete this project
 
@@ -23,17 +25,17 @@ The code folder in this repository contains a copy of the Technigo React Starter
 
 ## How to approach this as a team
 
-The first step, as always, should be to sketch out your application and decide how things should look, but also what kind of components you'd like. *Give thought - as a team - as to what components you might need, and what naming you should use.*
+The first step, as always, should be to sketch out your application and decide how things should look, and what kind of components you'd like. *Give thought - as a team - as to what components you might need, and what naming you should use.*
 
-Once you have an idea of the design of the app, and what kind of components you'll need, you should consider which endpoints you need in your API and how to structure the data in your MongoDB. For example, one endpoint that fetches all questions could be a good idea. 
+Once you have an idea of the design of the app, and what kind of components you'll need, you should consider which endpoints you need in your API and how to structure the data in your database. For example, one endpoint that fetches all questions could be a good idea.
 
 # :boom: Success!
 
-At the end of this Sprint you will have the knowledge of how to build full applications with both a front and a backend. You will have practiced you Node.js knowledge and understodd how API's work and how to build them. 
+At the end of this sprint you will have the knowledge of how to build full applications with both a front and a backend. You will have practiced you Node.js knowledge and understood how APIs work, and how to build them. 
 
 # :runner: Stretch Goals
 
 Done with the main task? Try to come up with some fun stretch goals within your company. Here's some ideas:
 
-1. Add a login functionality so that the support staff need to identify to be able to answer questions. 
-1. Add an upvoting function on questions so that users can upvote the more relevant questions and these get showed on top. 
+1. Add login functionality so that the support staff need to identify to be able to answer questions.
+1. Add an upvoting function on questions so that users can upvote the more relevant questions and these get showed on top.
