@@ -55,7 +55,15 @@ app.post("/faq", (req, res) => {
 })
 
 app.get("/faq/:topicId", (req, res) => {
-  Comment.find({inReplyTo:req.params.topicId, isVisible: true})
+  Comment.find({inReplyTo:req.params.topicId, isVisible: true}).then( faq => res.json(faq))
+})
+
+app.post("/faq/:topicId", (req, res) => {
+  const comment = new Comment(req.body)
+
+  comment.save()
+  .then(( => { res.status(201).send("New comment created")})
+  .catch(err => { res.status(400).send(err)})
 })
 
 app.listen(8080, () => {
