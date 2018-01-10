@@ -19,7 +19,7 @@ mongoose.connection.once("open", () => {
 mongoose.connection.on("error", err => {
   console.error("connection error:", err)
 })
-const Topic = mongoose.model("topic", {
+const Topic = mongoose.model("Topic", {
   //attributes for questions here.
   name: String,
   email: String,
@@ -31,13 +31,14 @@ const Topic = mongoose.model("topic", {
   isVisible: Boolean
 })
 
-const Comment = mongoose.model("comment", {
+const Comment = mongoose.model("Comment", {
   name: String,
   email: String,
   content: String,
   date: Date,
   isAdmin: Boolean,
-  isVisible: Boolean
+  isVisible: Boolean,
+  inReplyTo: { type:mongoose.Schema.Types.ObjectId, ref:"Topic"}
 })
 
 app.get("/faq", (req, res) => {
@@ -53,7 +54,11 @@ app.post("/faq", (req, res) => {
     .catch(err => { res.status(400).send(err)})
 })
 
+app.get("/faq/:topicId", (req, res) => {
+  Comment.find({inReplyTo:req.params.topicId, isVisible: true})
+})
 
 app.listen(8080, () => {
   console.log("Server running on port 8080")
 })
+// path parameters
