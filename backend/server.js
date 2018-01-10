@@ -62,7 +62,7 @@ app.post("/faq/:topicId", (req, res) => {
   const comment = new Comment(req.body)
 
   comment.save()
-  .then(( => { res.status(201).send("New comment created")})
+  .then(() => { res.status(201).send("New comment created")})
   .catch(err => { res.status(400).send(err)})
 })
 
