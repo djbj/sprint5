@@ -4,7 +4,7 @@ import "style.css"
 
 import Search from "./search"
 
-export default class Home extends React.Component {
+export default class HomeView extends React.Component {
   render() {
     return (
       <div>
