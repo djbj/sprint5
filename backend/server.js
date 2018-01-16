@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors())
 
-mongoose.connect("mongodb://localhost/technigo-forum", { useMongoClient: true })
+mongoose.connect("mongodb://localhost/technigo-forum-2", { useMongoClient: true })
 
 mongoose.Promise = Promise
 
@@ -19,6 +19,7 @@ mongoose.connection.once("open", () => {
 mongoose.connection.on("error", err => {
   console.error("connection error:", err)
 })
+
 const Topic = mongoose.model("Topic", {
   //attributes for questions here.
   name: String,
@@ -50,7 +51,7 @@ app.post("/faq", (req, res) => {
   const faq = new Topic(req.body)
 
   faq.save()
-    .then(() => { res.status(201).send("Topic created")})
+    .then(() => { res.status(201).send("Sopic created")})
     .catch(err => { res.status(400).send(err)})
 })
 
@@ -70,3 +71,13 @@ app.listen(8080, () => {
   console.log("Server running on port 8080")
 })
 // path parameters
+// {
+//   "name": "Bjorn Johnson",
+//   "email": "bjossijohnson@email.com",
+//   "headline": "Whats wrong",
+//   "content": "Team Technigo",
+//   "category": "Basic",
+//   "date": {date},
+//   "isAnswered": false,
+//   "isVisible": false
+// }

@@ -6,14 +6,14 @@ export default class TopicForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: [],
-      email: [],
-      headline: [],
-      content: []
-      // category: String,
-      // date: Date,
-      // isAnswered: Boolean,
-      // isVisible: Boolean
+      name: "",
+      email: "",
+      headline: "",
+      content: "",
+      category: "",
+      date: "",
+      isAnswered: "",
+      isVisible: ""
     }
   }
   // handleSubmit = event => {
@@ -35,14 +35,16 @@ export default class TopicForm extends React.Component {
     event.preventDefault()
     fetch("http://localhost:8080/faq", {
       method: "POST",
-      header: {
+      headers: {
         Accept: "application/json, textplain, */*",
         "Content-Type": "application/json"
       },
       body: JSON.stringify(this.state)
     }).then(response => {
-      return response.json()
+      console.log(response)
+      return response
     })
+
     this.setState({
       name: "",
       email: "",
