@@ -39,6 +39,9 @@ export default class TopicForm extends React.Component {
     })
   }
 
+sendToView = () => {
+  this.props.blabla(this.state)
+}
   handleName = event => {
     this.setState({
       name: event.target.value
@@ -101,6 +104,7 @@ export default class TopicForm extends React.Component {
               onChange={this.handleContent} />
           </label>
           <button
+            onClick={this.sendToView}
             type="submit">Submit
           </button>
         </form>

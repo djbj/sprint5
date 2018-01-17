@@ -6,6 +6,7 @@ import AdminView from "../admin-view"
 import Navigation from "../navigation"
 import TopicForm from "../topic-form"
 import TopicList from "../topic-list"
+import Topic from "../topic"
 
 export default class HomeView extends React.Component {
   constructor(props) {
@@ -23,15 +24,21 @@ export default class HomeView extends React.Component {
     })
   }
 
+  forceUpdate = (updatedList) => {
+    this.setState({topicList: updatedList})
+    // this.setState({ topicList: json })
+    console.log("forceUpdate")
+  }
+
   render() {
     return (
         <div>
           <Navigation />
-          <TopicForm />
+          <TopicForm
+            blabla={this.forceUpdate} />
           <TopicList
             topicList={this.state.topicList} />
-            {/* <DashBoard
-              topicList={this.state.topicList} /> */}
+          <Topic />
         </div>
 
     )
