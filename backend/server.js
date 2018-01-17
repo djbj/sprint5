@@ -43,7 +43,6 @@ const Comment = mongoose.model("Comment", {
 })
 
 app.get("/faq", (req, res) => {
-  res.send("All topics")
   Topic.find().then( faq => res.json(faq))
 })
 

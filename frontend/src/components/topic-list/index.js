@@ -1,7 +1,7 @@
 import React from "react"
-import uuid from "uuid/v4"
-import "style.css"
-import Topic from "./topic"
+// import uuid from "uuid/v4"
+import "./style.css"
+import Topic from "../topic"
 
 export default class TopicList extends React.Component {
   constructor(props) {
@@ -27,7 +27,8 @@ export default class TopicList extends React.Component {
             return <Topic
               headline={topic.headline}
               content={topic.content}
-              id={topic._id}
+              name={topic.name}
+              // id={topic._id}
               category={topic.category}
               date={topic.date}
               isAnswered={topic.isAnswered}
