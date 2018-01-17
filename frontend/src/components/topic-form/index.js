@@ -11,9 +11,9 @@ export default class TopicForm extends React.Component {
       headline: "",
       content: "",
       category: "",
-      date: "",
-      isAnswered: "",
-      isVisible: ""
+      date: Date.now(),
+      isAnswered: false,
+      isVisible: false
     }
   }
   // handleSubmit = event => {

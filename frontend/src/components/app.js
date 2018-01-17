@@ -1,6 +1,7 @@
 import React from "react"
 import TopicForm from "./topic-form"
 import TopicList from "./topic-list"
+import DashBoard from "./dashboard"
 
 export default class App extends React.Component {
   constructor(props) {
@@ -24,6 +25,8 @@ export default class App extends React.Component {
         Find me in src/app.js!
         <TopicForm />
         <TopicList
+          topicList={this.state.topicList} />
+        <DashBoard
           topicList={this.state.topicList} />
       </div>
     )
