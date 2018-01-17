@@ -19,6 +19,7 @@ export default class TopicForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    this.props.onNewTopic(this.state)
     fetch("http://localhost:8080/faq", {
       method: "POST",
       headers: {
