@@ -43,7 +43,6 @@ export default class HomeView extends React.Component {
           topicList={this.state.topicList} /> */}
         <Topic />
       </div>
-
     )
   }
 }
