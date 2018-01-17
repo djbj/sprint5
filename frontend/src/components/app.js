@@ -1,34 +1,21 @@
 import React from "react"
+import { BrowserRouter, Route } from "react-router-dom"
 import TopicForm from "./topic-form"
 import TopicList from "./topic-list"
 import DashBoard from "./dashboard"
+import HomeView from "./home-view"
+import AdminView from "./admin-view"
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      topicList: []
-    }
-  }
-
-  componentDidMount() {
-    fetch("http://localhost:8080/faq").then(response => {
-      return response.json()
-    }).then(json => {
-      this.setState({ topicList: json })
-    })
-  }
 
   render() {
     return (
+      <BrowserRouter>
       <div>
-        Find me in src/app.js!
-        <TopicForm />
-        <TopicList
-          topicList={this.state.topicList} />
-        <DashBoard
-          topicList={this.state.topicList} />
+        <Route exact path="/home" component={HomeView} />
+        <Route path="/admin" component={AdminView} />
       </div>
+    </BrowserRouter>
     )
   }
 
