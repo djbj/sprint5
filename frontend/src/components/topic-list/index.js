@@ -26,8 +26,10 @@ export default class TopicList extends React.Component {
               isVisible={topic.isVisible}
                />
                <Comment
-                 id={topic._id} />
+                 id={topic._id}
+               />
                  </div>
+                 {console.log(topic._id)}
               {/* <button onClick={this.handleCommentClick}>Comment</button></div> */}
           })}
         </section>
