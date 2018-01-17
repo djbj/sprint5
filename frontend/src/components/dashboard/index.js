@@ -10,7 +10,7 @@ export default class DashBoard extends React.Component {
     const unAnsweredCount = this.props.topicList.filter(topic => !topic.isAnswered).length
     return (
       <div>
-        <p>Unanswered questions: {this.unAnsweredCount} </p>
+        <p>Unanswered questions: {unAnsweredCount} </p>
       </div>
     )
   }
