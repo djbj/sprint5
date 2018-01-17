@@ -16,21 +16,7 @@ export default class TopicForm extends React.Component {
       isVisible: false
     }
   }
-  // handleSubmit = event => {
-  //   this.setState({
-  //     name: event.target.name,
-  //   })
-  // }
-  //
-  // handleInputChange = event => {
-  //   const target = event.target
-  //   const value = target.value
-  //   const name = target.name
-  //
-  //   this.setState({
-  //     [name]: value
-  //   })
-  // }
+
   handleSubmit = event => {
     event.preventDefault()
     fetch("http://localhost:8080/faq", {
