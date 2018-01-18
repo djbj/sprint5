@@ -39,7 +39,7 @@ const Comment = mongoose.model("Comment", {
   date: Date,
   isAdmin: Boolean,
   isVisible: Boolean,
-  inReplyTo: { type:mongoose.Schema.Types.ObjectId, ref:"Topic"}
+  inReplyTo: { type: mongoose.Schema.Types.ObjectId, ref: "Topic" }
 })
 
 app.get("/faq", (req, res) => {
@@ -58,7 +58,7 @@ app.get("/faq/:topicId", (req, res) => {
   Comment.find({inReplyTo:req.params.topicId, isVisible: true}).then( faq => res.json(faq))
 })
 
-app.post("/faq/:topicId", (req, res) => {
+app.post("/comments", (req, res) => {
   const comment = new Comment(req.body)
 
   comment.save()

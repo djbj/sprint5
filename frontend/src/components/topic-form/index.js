@@ -28,15 +28,19 @@ export default class TopicForm extends React.Component {
       },
       body: JSON.stringify(this.state)
     }).then(response => {
-      console.log(response)
-      return response
-    })
-
-    this.setState({
-      name: "",
-      email: "",
-      headline: "",
-      content: ""
+      if (response.status === 201) {
+        this.setState({
+          name: "",
+          email: "",
+          headline: "",
+          content: ""
+        })
+      } else {
+        // it was invalid...
+      }
+    }).catch(err => {
+      // api down? request failed?
+      console.log("Error!", err)
     })
   }
 

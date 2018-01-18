@@ -14,9 +14,9 @@ export default class HomeView extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:8080/faq").then(response => {
-      return response.json()
-    }).then(json => {
+    fetch("http://localhost:8080/faq").then(response => (
+      response.json()
+    )).then(json => {
       this.setState({ topicList: json })
     })
   }
