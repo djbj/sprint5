@@ -10,7 +10,7 @@ export default class Comment extends React.Component {
       name: "",
       email: "",
       content: "",
-      date: "",
+      date: Date.now(),
       isAdmin: false,
       isVisible: false,
       // inReplyTo: { type:mongoose.Schema.Types.ObjectId, ref:"Topic"}
@@ -20,7 +20,7 @@ export default class Comment extends React.Component {
 
   handleCommentSubmit = event => {
     event.preventDefault()
-    fetch("http://localhost:8080//faq/:topicId", {
+    fetch("http://localhost:8080/faq/:topicId", {
       method: "POST",
       headers: {
         Accept: "application/json, textplain, */*",
@@ -31,6 +31,11 @@ export default class Comment extends React.Component {
       console.log(response)
       return response
     })
+    this.setState({
+      name: "",
+      email: "",
+      content: ""
+    })
   }
 
   handleCommentName = event => {
@@ -38,6 +43,7 @@ export default class Comment extends React.Component {
       name: event.target.value
     })
   }
+
   handleCommentEmail = event => {
     this.setState({
       email: event.target.value
