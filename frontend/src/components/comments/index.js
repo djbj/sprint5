@@ -12,7 +12,8 @@ export default class Comment extends React.Component {
       isAdmin: false,
       isVisible: false,
       // inReplyTo: { type:mongoose.Schema.Types.ObjectId, ref:"Topic"}
-      replyTo: ""
+      replyTo: "",
+      isAnswered: false
     }
   }
 
@@ -26,13 +27,16 @@ export default class Comment extends React.Component {
       },
       body: JSON.stringify(this.state)
     }).then(response => {
-      console.log(response)
-      return response
-    })
-    this.setState({
-      name: "",
-      email: "",
-      content: ""
+      if (response.ok) {
+        this.setState({
+          name: "",
+          email: "",
+          content: "",
+          isAnswered: true
+        })
+      } else {
+        // validation error
+      }
     })
   }
 
@@ -58,8 +62,9 @@ export default class Comment extends React.Component {
     return (
       <div>
         <form
-          className="comment-form hide"
-          onSubmit={this.handleCommentSubmit}>
+          className="comment-form"
+          onSubmit={this.handleCommentSubmit}
+          value={this.state.isAnswered}>
           <label>
             <h3>Name:</h3>
             <input
