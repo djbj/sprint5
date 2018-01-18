@@ -19,6 +19,7 @@ export default class Comment extends React.Component {
 
   handleCommentSubmit = event => {
     event.preventDefault()
+    this.props.handleNewComment(this.state.isAnswered)
     fetch("http://localhost:8080/comments", {
       method: "POST",
       headers: {
@@ -31,8 +32,7 @@ export default class Comment extends React.Component {
         this.setState({
           name: "",
           email: "",
-          content: "",
-          isAnswered: true
+          content: ""
         })
       } else {
         // validation error
@@ -63,8 +63,7 @@ export default class Comment extends React.Component {
       <div>
         <form
           className="comment-form"
-          onSubmit={this.handleCommentSubmit}
-          value={this.state.isAnswered}>
+          onSubmit={this.handleCommentSubmit}>
           <label>
             <h3>Name:</h3>
             <input

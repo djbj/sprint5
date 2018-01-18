@@ -21,8 +21,10 @@ export default class TopicList extends React.Component {
               isAnswered={topic.isAnswered}
               isVisible={topic.isVisible} />
             <Comment
-              id={topic._id} />
-            </div>
+              id={topic._id}
+              handleNewComment={this.props.handleNewComment}
+              newComment={topic.isAnswered} />
+          </div>
           })}
         </section>
 

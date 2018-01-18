@@ -1,5 +1,4 @@
 import React from "react"
-import uuid from "uuid/v4"
 import "./style.css"
 
 export default class TopicForm extends React.Component {
@@ -72,6 +71,7 @@ export default class TopicForm extends React.Component {
     return (
       <div>
         <form
+          value={this.state.isAnswered}
           className="topic-form"
           onSubmit={this.handleSubmit}>
           <label>

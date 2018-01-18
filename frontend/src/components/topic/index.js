@@ -11,6 +11,7 @@ export default class Topic extends React.Component {
         <p className="userName">{this.props.name}</p>
         <p className="category">{this.props.category}</p>
         <p className="date">{this.props.date}</p>
+        {this.props.isAnswered}
       </div>
     )
   }
