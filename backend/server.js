@@ -39,7 +39,7 @@ const Comment = mongoose.model("Comment", {
   date: Date,
   isAdmin: Boolean,
   isVisible: Boolean,
-  inReplyTo: { type:mongoose.Schema.Types.ObjectId, ref:"Topic"}
+  inReplyTo: { type:mongoose.Schema.Types.ObjectId, ref:"Topic" }
 })
 
 app.get("/faq", (req, res) => {
@@ -50,7 +50,7 @@ app.post("/faq", (req, res) => {
   const faq = new Topic(req.body)
 
   faq.save()
-    .then(() => { res.status(201).send("Sopic created")})
+    .then(() => { res.status(201).send("Topic created")})
     .catch(err => { res.status(400).send(err)})
 })
 
