@@ -1,7 +1,5 @@
 import React from "react"
-import uuid from "uuid/v4"
 import "./style.css"
-
 
 export default class Comment extends React.Component {
   constructor(props) {
@@ -20,7 +18,7 @@ export default class Comment extends React.Component {
 
   handleCommentSubmit = event => {
     event.preventDefault()
-    fetch("http://localhost:8080/faq/:topicId", {
+    fetch("http://localhost:8080/comments", {
       method: "POST",
       headers: {
         Accept: "application/json, textplain, */*",
@@ -60,7 +58,7 @@ export default class Comment extends React.Component {
     return (
       <div>
         <form
-          className="topic-form"
+          className="comment-form"
           onSubmit={this.handleCommentSubmit}>
           <label>
             <h3>Name:</h3>
