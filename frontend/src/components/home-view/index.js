@@ -28,6 +28,14 @@ export default class HomeView extends React.Component {
     })
   }
 
+  handleNewComment = isAnswered => {
+    const newComment = !isAnswered
+    console.log("isAnswered", newComment)
+    this.setState({
+      topicList: [newComment, ...this.state.topicList]
+    })
+  }
+
   render() {
     return (
       <div>
@@ -35,6 +43,7 @@ export default class HomeView extends React.Component {
         <TopicForm
           onNewTopic={this.handleNewTopic} />
         <TopicList
+          handleNewComment={this.handleNewComment}
           topicList={this.state.topicList} />
         <Topic />
       </div>
