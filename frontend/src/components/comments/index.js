@@ -4,6 +4,13 @@ import "./style.css"
 export default class Comment extends React.Component {
   constructor(props) {
     super(props)
+
+    let gotId = ""
+
+    if (this.props.id) {
+      gotId = this.props.id
+    }
+
     this.state = {
       name: "",
       email: "",
@@ -11,7 +18,7 @@ export default class Comment extends React.Component {
       date: Date.now(),
       isAdmin: false,
       isVisible: false,
-      replyTo: "",
+      inReplyTo: gotId,
       isAnswered: false
     }
   }
