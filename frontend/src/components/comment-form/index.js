@@ -1,12 +1,11 @@
 import React from "react"
 import "./style.css"
 
-export default class Comment extends React.Component {
+export default class CommentForm extends React.Component {
   constructor(props) {
     super(props)
 
     let gotId = ""
-
     if (this.props.id) {
       gotId = this.props.id
     }
