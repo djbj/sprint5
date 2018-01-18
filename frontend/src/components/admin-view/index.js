@@ -4,6 +4,7 @@ import "./style.css"
 import DashBoard from "../dashboard"
 import Topic from "../topic"
 import Navigation from "../navigation"
+// // import CommentForm from "../comment-form"
 import Comment from "../comments"
 import TopicList from "../topic-list"
 
@@ -46,7 +47,7 @@ export default class AdminView extends React.Component {
           <Topic />
         </main>
         <section>
-          <Comment />
+          {/* <CommentForm /> */}
         </section>
       </div>
     )

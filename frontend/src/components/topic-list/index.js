@@ -2,7 +2,8 @@ import React from "react"
 // import uuid from "uuid/v4"
 import "./style.css"
 import Topic from "../topic"
-import CommentForm from "../comments"
+import Comment from "../comments"
+import CommentForm from "../comment-form"
 
 export default class TopicList extends React.Component {
 
@@ -24,6 +25,8 @@ export default class TopicList extends React.Component {
               id={topic._id}
               handleNewComment={this.props.handleNewComment}
               newComment={topic.isAnswered} />
+            <Comment
+              commentList={this.props.commentList} />
           </div>
           })}
         </section>

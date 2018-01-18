@@ -4,7 +4,8 @@ import Navigation from "../navigation"
 import TopicForm from "../topic-form"
 import TopicList from "../topic-list"
 import Topic from "../topic"
-import Comment from "../comment"
+import Comment from "../comments"
+import CommentForm from "../comment-form"
 
 export default class HomeView extends React.Component {
   constructor(props) {
@@ -47,6 +48,7 @@ export default class HomeView extends React.Component {
           handleNewComment={this.handleNewComment}
           topicList={this.state.topicList} />
         <Topic />
+        <CommentForm />
         <Comment />
       </div>
     )
