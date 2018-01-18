@@ -1,5 +1,71 @@
+@font-face {
+  font-family: 'Big John';
+  src: local('Big John'), url(./fonts/bigjohn-webfont.woff) format('woff');
+}
+
 body {
+  margin: 0 0 0 40px;
+  padding: 0;
+  font-family: 'Big John', sans-serif;
+  color: #FE3525;
+  background-color: #FFDFE7;
+}
+
+h3 {
   margin: 0;
   padding: 0;
+  font-size: 16px;
+}
+
+input, textarea {
+  margin: 5px 0 15px 0;
+}
+
+button {
+  display: inline-block;
+  padding: 16px 24px 16px 24px;
+  background-color: #F6A623;
+  border: 3px #F6A623 solid;
+  margin: 10px 10px 10px 0;
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Big John', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #e3a53e;
+  border: 3px #e3a53e solid;
+}
+
+.content {
   font-family: sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+
+.userName {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #000;
+  font-style: italic;
+}
+
+.category {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #000;
+  font-style: italic;
+}
+
+.date {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #696969;
+  font-style: italic;
 }

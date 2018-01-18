@@ -105,6 +105,7 @@ export default class TopicForm extends React.Component {
               value={this.state.content}
               onChange={this.handleContent} />
           </label>
+          <br />
           <button
             type="submit">Submit
           </button>

@@ -85,6 +85,7 @@ export default class Comment extends React.Component {
               value={this.state.content}
               onChange={this.handleCommentContent} />
           </label>
+          <br />
           <button
             type="submit">Submit
           </button>

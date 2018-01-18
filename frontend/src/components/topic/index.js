@@ -7,10 +7,10 @@ export default class Topic extends React.Component {
     return (
       <div>
         <h1>{this.props.headline}</h1>
-        <p>{this.props.content}</p>
-        <p>{this.props.date}</p>
-        <p>{this.props.category}</p>
-        <p>{this.props.name}</p>
+        <p className="content">{this.props.content}</p>
+        <p className="userName">{this.props.name}</p>
+        <p className="category">{this.props.category}</p>
+        <p className="date">{this.props.date}</p>
       </div>
     )
   }
