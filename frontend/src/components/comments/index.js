@@ -11,7 +11,6 @@ export default class Comment extends React.Component {
       date: Date.now(),
       isAdmin: false,
       isVisible: false,
-      // inReplyTo: { type:mongoose.Schema.Types.ObjectId, ref:"Topic"}
       replyTo: "",
       isAnswered: false
     }
