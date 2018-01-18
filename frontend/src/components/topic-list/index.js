@@ -6,10 +6,6 @@ import Comment from "../comments"
 
 export default class TopicList extends React.Component {
 
-// handleCommentClick = event => {
-//   return <Comment
-//           />
-// }
   render() {
     return (
       <div>
@@ -23,14 +19,10 @@ export default class TopicList extends React.Component {
               category={topic.category}
               date={topic.date}
               isAnswered={topic.isAnswered}
-              isVisible={topic.isVisible}
-               />
-               <Comment
-                 id={topic._id}
-               />
-                 </div>
-                 {console.log(topic._id)}
-              {/* <button onClick={this.handleCommentClick}>Comment</button></div> */}
+              isVisible={topic.isVisible} />
+            <Comment
+              id={topic._id} />
+            </div>
           })}
         </section>
 

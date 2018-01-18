@@ -3,8 +3,9 @@ import { BrowserRouter, Route } from "react-router-dom"
 import "./style.css"
 import DashBoard from "../dashboard"
 import Topic from "../topic"
-import TopicForm from "../topic-form"
 import Navigation from "../navigation"
+import Comment from "../comments"
+import TopicList from "../topic-list"
 
 export default class AdminView extends React.Component {
   constructor(props) {
@@ -27,13 +28,15 @@ export default class AdminView extends React.Component {
         <aside>
           <Navigation />
           <DashBoard
-          topicList={this.state.topicList} />
+            topicList={this.state.topicList} />
         </aside>
         <main>
+          <TopicList
+            topicList={this.state.topicList} />
           <Topic />
         </main>
         <section>
-          <TopicForm />
+          <Comment />
         </section>
       </div>
     )

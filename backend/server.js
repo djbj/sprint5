@@ -54,7 +54,7 @@ app.post("/faq", (req, res) => {
     .catch(err => { res.status(400).send(err)})
 })
 
-app.get("/faq/:topicId", (req, res) => {
+app.get("/comments", (req, res) => {
   Comment.find({inReplyTo:req.params.topicId, isVisible: true}).then( faq => res.json(faq))
 })
 

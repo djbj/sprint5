@@ -36,8 +36,6 @@ export default class HomeView extends React.Component {
           onNewTopic={this.handleNewTopic} />
         <TopicList
           topicList={this.state.topicList} />
-        {/* <DashBoard
-          topicList={this.state.topicList} /> */}
         <Topic />
       </div>
     )
