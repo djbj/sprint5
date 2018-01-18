@@ -58,7 +58,7 @@ export default class Comment extends React.Component {
     return (
       <div>
         <form
-          className="comment-form"
+          className="comment-form hide"
           onSubmit={this.handleCommentSubmit}>
           <label>
             <h3>Name:</h3>
