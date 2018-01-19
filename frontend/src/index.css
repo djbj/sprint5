@@ -65,6 +65,10 @@ input, textarea {
   font-family: 'Big John', sans-serif;
 }
 
+.orange:hover {
+  cursor: pointer;
+}
+
 .blue {
   display: inline-block;
   width: 100px;
@@ -76,6 +80,10 @@ input, textarea {
   color: #fff;
   text-decoration: none;
   font-family: 'Big John', sans-serif;
+}
+
+.blue:hover {
+  cursor: pointer;
 }
 
 a {
