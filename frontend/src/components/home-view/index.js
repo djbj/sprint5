@@ -4,7 +4,7 @@ import Navigation from "../navigation"
 import TopicForm from "../topic-form"
 import TopicList from "../topic-list"
 import Topic from "../topic"
-import Comment from "../comments"
+import Comment from "../comment"
 import CommentForm from "../comment-form"
 
 export default class HomeView extends React.Component {

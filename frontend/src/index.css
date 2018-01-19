@@ -29,17 +29,18 @@ input, textarea {
   width: 80%;
   font-style: italic;
   padding-left: 5px;
-  color: #f7f7f7;
+  color: #1f1f1f;
 }
 
-.buttons {
+.navigation-btn {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-end;
+  margin-right: 40px;
 }
 
-.home {
+.orange {
   display: inline-block;
   width: 20%;
   padding: 16px 24px 16px 24px;
@@ -52,7 +53,7 @@ input, textarea {
   font-family: 'Big John', sans-serif;
 }
 
-.admin {
+.blue {
   display: inline-block;
   width: 20%;
   padding: 16px 24px 16px 24px;
@@ -70,14 +71,16 @@ a {
   color: #fff;
 }
 
-.home:hover {
-  background-color: #e3a53e;
-  border: 3px #e3a53e solid;
+.orange:hover {
+  background-color: #ab6c03;
+  border: 3px #ab6c03 solid;
+  color: #f7f7f7;
 }
 
-.admin:hover {
-  background-color: #e3a53e;
-  border: 3px #e3a53e solid;
+.blue:hover {
+  background-color: #000f6b;
+  border: 3px #000f6b solid;
+  color: #f7f7f7;
 }
 
 p {
@@ -122,6 +125,5 @@ p {
 .comment-form {
   background: #fff8f8;
   padding: 20px;
-  margin-right: 40px;
-  margin-bottom: 20px;
+  margin: 20px 40px 20px 0;
 }

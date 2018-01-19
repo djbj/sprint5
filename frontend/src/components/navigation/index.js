@@ -6,11 +6,11 @@ export default class Navigation extends React.Component {
 
   render() {
     return (
-      <div className="buttons">
-        <button className="admin">
+      <div className="navigation-btn">
+        <button className="blue">
           <Link to="/admin">Admin</Link>
         </button>
-        <button className="home">
+        <button className="orange">
           <Link to="/home">Home</Link>
         </button>
       </div>
