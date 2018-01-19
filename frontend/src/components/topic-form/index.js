@@ -100,7 +100,7 @@ export default class TopicForm extends React.Component {
               name="headline"
               type="text"
               required
-              placeholder="Write your question here"
+              placeholder="What is your topic?"
               value={this.state.headline}
               onChange={this.handleHeadline} />
           </label>
@@ -109,6 +109,7 @@ export default class TopicForm extends React.Component {
             <textarea
               name="content"
               value={this.state.content}
+              placeholder="Write your question here"
               onChange={this.handleContent} />
           </label>
           <br />

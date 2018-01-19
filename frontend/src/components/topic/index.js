@@ -55,7 +55,8 @@ export default class Topic extends React.Component {
                 newComment={this.props.isAnswered} />
             )} />
 
-          {this.state.comments.filter(comment => comment.inReplyTo === this.props.id).map(comment => (
+          {this.state.comments.filter(comment =>
+            comment.inReplyTo === this.props.id).map(comment => (
             <Comment
               comment={comment} />
           ))}
