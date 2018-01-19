@@ -31,6 +31,8 @@ export default class HomeView extends React.Component {
     return (
       <div className="content-container">
         <Navigation />
+        <h4>Ask your question:</h4>
+        <hr />
         <TopicForm
           onNewTopic={this.handleNewTopic} />
 

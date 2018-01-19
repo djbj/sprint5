@@ -18,9 +18,9 @@ h3 {
 }
 
 h4 {
-  margin: 10px 0 0 0;
+  margin: 20px 0 0 0;
   padding: 0;
-  font-size: 24px;
+  font-size: 20px;
   color: #001fd3;
 }
 
@@ -28,6 +28,11 @@ h1 {
   margin: 10px 0 0 0;
   padding: 0;
   font-size: 24px;
+}
+
+hr {
+  border-color: #001fd3;
+  margin: 5px 40px 20px 0;
 }
 
 input, textarea {
@@ -53,7 +58,7 @@ input, textarea {
   padding: 16px 24px 16px 24px;
   background-color: #F6A623;
   border: 3px #F6A623 solid;
-  margin: 10px 10px 10px 0;
+  margin: 10px 0 10px 0;
   font-size: 12px;
   color: #fff;
   text-decoration: none;
