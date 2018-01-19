@@ -35,6 +35,8 @@ export default class HomeView extends React.Component {
           onNewTopic={this.handleNewTopic} />
 
         <section className="topic-list">
+          <h4>Most recent questions:</h4>
+          <hr />
           {this.state.topicList.map(topic => (
             <Topic
               headline={topic.headline}
