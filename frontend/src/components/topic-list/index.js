@@ -1,5 +1,4 @@
 import React from "react"
-import comment-form
 // import uuid from "uuid/v4"
 import "./style.css"
 import Topic from "../topic"

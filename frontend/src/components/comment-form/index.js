@@ -10,11 +10,6 @@ export default class CommentForm extends React.Component {
       gotId = this.props.id
     }
 
-    // let gotName = ""
-    // if (this.props.name) {
-    //   gotName = this.props.name
-    // }
-
     this.state = {
       name: "",
       email: "",
