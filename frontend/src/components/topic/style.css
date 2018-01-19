@@ -5,3 +5,7 @@
 .up {
   display: none;
 }
+
+h1 {
+  cursor: pointer;
+}
