@@ -79,6 +79,8 @@ export default class TopicForm extends React.Component {
             <input
               name="name"
               type="text"
+              required
+              placeholder="Name"
               value={this.state.name}
               onChange={this.handleName} />
           </label>
@@ -87,6 +89,8 @@ export default class TopicForm extends React.Component {
             <input
               name="email"
               type="email"
+              required
+              placeholder="name@email.com"
               value={this.state.email}
               onChange={this.handleEmail} />
           </label>
@@ -95,6 +99,8 @@ export default class TopicForm extends React.Component {
             <input
               name="headline"
               type="text"
+              required
+              placeholder="Write your question here"
               value={this.state.headline}
               onChange={this.handleHeadline} />
           </label>
