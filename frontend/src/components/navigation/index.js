@@ -7,12 +7,14 @@ export default class Navigation extends React.Component {
   render() {
     return (
       <div className="navigation-btn">
-        <button className="blue">
-          <Link to="/admin">Admin</Link>
-        </button>
-        <button className="orange">
-          <Link to="/home">Home</Link>
-        </button>
+        <Link to="/admin">
+          <button className="blue">Admin</button>
+        </Link>
+
+        <Link to="/home">
+          <button className="orange">Home
+          </button>
+        </Link>
       </div>
     )
   }

@@ -5,18 +5,6 @@ import Comment from "../comment"
 import CommentForm from "../comment-form"
 
 export default class Topic extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     isHidden: false
-  //   }
-  // }
-  //
-  // toggleHidden() {
-  //   this.setState({
-  //     isHidden: !this.state.isHidden
-  //   })
-  // }
   constructor(props) {
     super(props)
     this.state = {
@@ -52,17 +40,12 @@ export default class Topic extends React.Component {
             id={this.props.id}
             handleNewComment={this.handleNewComment}
             newComment={this.props.isAnswered} />
-            {this.state.comments.map(comment => (
-              <Comment
-                comment={comment} />
-            ))}
+          {this.state.comments.map(comment => (
+            <Comment
+              comment={comment} />
+          ))}
         </div>
-        </div>
-
-        // {/* <div>
-        //   <button onClick={this.toggleHidden ? "comment-form" : "hide"}>Add a comment</button>
-        //   <Comment />
-        // </div> */}
+      </div>
 
     )
   }
