@@ -48,8 +48,6 @@ export default class HomeView extends React.Component {
           handleNewComment={this.handleNewComment}
           topicList={this.state.topicList} />
         <Topic />
-        <CommentForm />
-        <Comment />
       </div>
     )
   }

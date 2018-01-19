@@ -28,7 +28,7 @@ export default class AdminView extends React.Component {
     const newComment = !isAnswered
     console.log("isAnswered", newComment)
     this.setState({
-      topicList: [newComment, ...this.state.topicList]
+      topicList: [newComment, ...this.state.topicList ]
     })
   }
 
