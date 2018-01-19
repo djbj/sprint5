@@ -40,7 +40,7 @@ export default class HomeView extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="content-container">
         <Navigation />
         <TopicForm
           onNewTopic={this.handleNewTopic} />

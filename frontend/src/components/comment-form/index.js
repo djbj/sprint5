@@ -79,7 +79,9 @@ export default class CommentForm extends React.Component {
             <input
               name="name"
               type="text"
+              required
               value={this.state.name}
+              placeholder="Name"
               onChange={this.handleCommentName} />
           </label>
           <label>
@@ -87,6 +89,8 @@ export default class CommentForm extends React.Component {
             <input
               name="email"
               type="email"
+              required
+              placeholder="name@email.com"
               value={this.state.email}
               onChange={this.handleCommentEmail} />
           </label>
@@ -94,7 +98,9 @@ export default class CommentForm extends React.Component {
             <h3>Message:</h3>
             <textarea
               name="content"
+              required
               value={this.state.content}
+              placeholder="Write your comment here"
               onChange={this.handleCommentContent} />
           </label>
           <br />

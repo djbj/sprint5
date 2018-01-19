@@ -4,7 +4,7 @@
 }
 
 body {
-  margin: 0 0 0 40px;
+  margin: 0;
   padding: 0;
   font-family: 'Big John', sans-serif;
   color: #FE3525;
@@ -25,13 +25,39 @@ h1 {
 
 input, textarea {
   margin: 5px 0 15px 0;
+  height: 30px;
+  width: 80%;
+  font-style: italic;
+  padding-left: 5px;
+  color: #f7f7f7;
 }
 
-button {
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.home {
   display: inline-block;
+  width: 20%;
   padding: 16px 24px 16px 24px;
   background-color: #F6A623;
   border: 3px #F6A623 solid;
+  margin: 10px 10px 10px 0;
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Big John', sans-serif;
+}
+
+.admin {
+  display: inline-block;
+  width: 20%;
+  padding: 16px 24px 16px 24px;
+  background: #001ED2;
+  border: 3px #001ED2 solid;
   margin: 10px 10px 10px 0;
   font-size: 12px;
   color: #fff;
@@ -44,7 +70,12 @@ a {
   color: #fff;
 }
 
-button:hover {
+.home:hover {
+  background-color: #e3a53e;
+  border: 3px #e3a53e solid;
+}
+
+.admin:hover {
   background-color: #e3a53e;
   border: 3px #e3a53e solid;
 }
@@ -57,6 +88,10 @@ p {
   font-family: sans-serif;
   font-size: 14px;
   color: #000;
+}
+
+.content-container {
+  margin-left: 40px;
 }
 
 .userName {
