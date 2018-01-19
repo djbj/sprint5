@@ -29,7 +29,6 @@ export default class CommentForm extends React.Component {
 
   handleCommentSubmit = event => {
     event.preventDefault()
-    this.props.handleNewComment(this.state.isAnswered)
     fetch("http://localhost:8080/comments", {
       method: "POST",
       headers: {
@@ -39,6 +38,7 @@ export default class CommentForm extends React.Component {
       body: JSON.stringify(this.state)
     }).then(response => {
       if (response.ok) {
+        this.props.handleNewComment(this.state)
         this.setState({
           name: "",
           email: "",

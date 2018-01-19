@@ -1,6 +1,8 @@
 import React from "react"
 // import Comment from "../comments"
 import "./style.css"
+import Comment from "../comment"
+import CommentForm from "../comment-form"
 
 export default class Topic extends React.Component {
   // constructor(props) {
@@ -15,6 +17,27 @@ export default class Topic extends React.Component {
   //     isHidden: !this.state.isHidden
   //   })
   // }
+  constructor(props) {
+    super(props)
+    this.state = {
+      comments: []
+    }
+  }
+
+  componentDidMount() {
+    const url = `http://localhost:8080/topics/${this.props.id}/comments`
+    fetch(url).then(response => (
+      response.json()
+    )).then(json => {
+      this.setState({ comments: json })
+    })
+  }
+
+  handleNewComment = comment => {
+    this.setState({
+      comments: [...this.state.comments, comment]
+    })
+  }
 
   render() {
     return (
@@ -25,13 +48,22 @@ export default class Topic extends React.Component {
           <p className="userName">{this.props.name}</p>
           <p className="category">{this.props.category}</p>
           <p className="date">{this.props.date}</p>
+          <CommentForm
+            id={this.props.id}
+            handleNewComment={this.handleNewComment}
+            newComment={this.props.isAnswered} />
+            {this.state.comments.map(comment => (
+              <Comment
+                comment={comment} />
+            ))}
+        </div>
         </div>
 
-        {/* <div>
-          <button onClick={this.toggleHidden ? "comment-form" : "hide"}>Add a comment</button>
-          <Comment />
-        </div> */}
-      </div>
+        // {/* <div>
+        //   <button onClick={this.toggleHidden ? "comment-form" : "hide"}>Add a comment</button>
+        //   <Comment />
+        // </div> */}
+
     )
   }
 }

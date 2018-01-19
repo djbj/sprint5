@@ -2,8 +2,6 @@ import React from "react"
 // import uuid from "uuid/v4"
 import "./style.css"
 import Topic from "../topic"
-import Comment from "../comments"
-import CommentForm from "../comment-form"
 
 export default class TopicList extends React.Component {
 
@@ -21,16 +19,9 @@ export default class TopicList extends React.Component {
               date={topic.date}
               isAnswered={topic.isAnswered}
               isVisible={topic.isVisible} />
-            <CommentForm
-              id={topic._id}
-              handleNewComment={this.props.handleNewComment}
-              newComment={topic.isAnswered} />
-            <Comment
-              commentList={this.props.commentList} />
-          </div>
+            </div>
           })}
         </section>
-
       </div>
     )
   }
