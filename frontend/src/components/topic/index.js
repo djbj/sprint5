@@ -9,8 +9,16 @@ export default class Topic extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      comments: []
+      comments: [],
+      down: false
     }
+  }
+
+  handleClick = () => {
+    console.log("Handling")
+    this.setState({
+      down: !this.state.down
+    })
   }
 
   componentDidMount() {
@@ -41,15 +49,17 @@ export default class Topic extends React.Component {
     return (
       <div>
         <div className="topic">
-          <h1>{this.props.headline}</h1>
-          <p className="content">{this.props.content}</p>
-          <p className="userName">{this.props.name}</p>
-          <p className="category">{this.props.category}</p>
-          <p className="date">{this.props.date}</p>
+          <h1 onClick={this.handleClick} >{this.props.headline}</h1>
+          <div className={this.state.down ? "down" : "up"}>
+            <p className="content">{this.props.content}</p>
+            <p className="userName">{this.props.name}</p>
+            <p className="category">{this.props.category}</p>
+            <p className="date">{this.props.date}</p>
+          {/* </div> */}
           <Route
             path="/admin"
             render={() => (
-              <CommentForm
+              <CommentForm className={this.state.down ? "down" : "up"}
                 id={this.props.id}
                 handleNewComment={this.handleNewComment}
                 newComment={this.props.isAnswered} />
@@ -60,6 +70,7 @@ export default class Topic extends React.Component {
             <Comment
               comment={comment} />
           ))}
+          </div>
         </div>
       </div>
     )
