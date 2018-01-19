@@ -6,7 +6,7 @@ import Topic from "../topic"
 import Navigation from "../navigation"
 // // import CommentForm from "../comment-form"
 import Comment from "../comment"
-import TopicList from "../topic-list"
+// import TopicList from "../topic-list"
 
 export default class AdminView extends React.Component {
   constructor(props) {
@@ -24,14 +24,6 @@ export default class AdminView extends React.Component {
     })
   }
 
-  handleNewComment = isAnswered => {
-    const newComment = !isAnswered
-    console.log("isAnswered", newComment)
-    this.setState({
-      topicList: [newComment, ...this.state.topicList ]
-    })
-  }
-
   render() {
     return (
       <div className="content-container">
@@ -41,10 +33,19 @@ export default class AdminView extends React.Component {
             topicList={this.state.topicList} />
         </aside>
         <main>
-          <TopicList
-            handleNewComment={this.handleNewComment}
-            topicList={this.state.topicList} />
-          <Topic />
+          <section className="topic-list">
+            {this.state.topicList.map(topic => (
+              <Topic
+                headline={topic.headline}
+                content={topic.content}
+                name={topic.name}
+                id={topic._id}
+                category={topic.category}
+                date={topic.date}
+                isAnswered={topic.isAnswered}
+                isVisible={topic.isVisible} />
+            ))}
+          </section>
         </main>
         <section>
           {/* <CommentForm /> */}

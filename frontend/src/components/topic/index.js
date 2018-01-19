@@ -1,5 +1,6 @@
 import React from "react"
 // import Comment from "../comments"
+import { Route } from "react-router-dom"
 import "./style.css"
 import Comment from "../comment"
 import CommentForm from "../comment-form"
@@ -33,6 +34,15 @@ export default class Topic extends React.Component {
     })
   }
 
+  componentWillReceiveProps(nextProps) {
+    const url = `http://localhost:8080/topics/${nextProps.id}/comments`
+    fetch(url).then(response => (
+      response.json()
+    )).then(json => {
+      this.setState({ comments: json })
+    })
+  }
+
   handleNewComment = comment => {
     this.setState({
       comments: [...this.state.comments, comment]
@@ -48,22 +58,21 @@ export default class Topic extends React.Component {
           <p className="userName">{this.props.name}</p>
           <p className="category">{this.props.category}</p>
           <p className="date">{this.props.date}</p>
-          <CommentForm
-            id={this.props.id}
-            handleNewComment={this.handleNewComment}
-            newComment={this.props.isAnswered} />
-            {this.state.comments.map(comment => (
-              <Comment
-                comment={comment} />
-            ))}
-        </div>
-        </div>
+          <Route
+            path="/admin"
+            render={() => (
+              <CommentForm
+                id={this.props.id}
+                handleNewComment={this.handleNewComment}
+                newComment={this.props.isAnswered} />
+            )} />
 
-        // {/* <div>
-        //   <button onClick={this.toggleHidden ? "comment-form" : "hide"}>Add a comment</button>
-        //   <Comment />
-        // </div> */}
-
+          {this.state.comments.filter(comment => comment.inReplyTo === this.props.id).map(comment => (
+            <Comment
+              comment={comment} />
+          ))}
+        </div>
+      </div>
     )
   }
 }
