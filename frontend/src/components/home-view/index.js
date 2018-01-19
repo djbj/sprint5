@@ -2,10 +2,7 @@ import React from "react"
 import "./style.css"
 import Navigation from "../navigation"
 import TopicForm from "../topic-form"
-import TopicList from "../topic-list"
 import Topic from "../topic"
-import Comment from "../comment"
-import CommentForm from "../comment-form"
 
 export default class HomeView extends React.Component {
   constructor(props) {
@@ -30,26 +27,26 @@ export default class HomeView extends React.Component {
     })
   }
 
-  handleNewComment = isAnswered => {
-    const newComment = !isAnswered
-    console.log("isAnswered", newComment)
-    this.setState({
-      topicList: [newComment, ...this.state.topicList]
-    })
-  }
-
   render() {
     return (
       <div className="content-container">
         <Navigation />
         <TopicForm
           onNewTopic={this.handleNewTopic} />
-        <TopicList
-          handleNewComment={this.handleNewComment}
-          topicList={this.state.topicList} />
-        <Topic />
-        <CommentForm />
-        <Comment />
+
+        <section className="topic-list">
+          {this.state.topicList.map(topic => (
+            <Topic
+              headline={topic.headline}
+              content={topic.content}
+              name={topic.name}
+              id={topic._id}
+              category={topic.category}
+              date={topic.date}
+              isAnswered={topic.isAnswered}
+              isVisible={topic.isVisible} />
+          ))}
+        </section>
       </div>
     )
   }
