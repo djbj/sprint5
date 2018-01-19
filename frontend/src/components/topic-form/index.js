@@ -113,6 +113,7 @@ export default class TopicForm extends React.Component {
           </label>
           <br />
           <button
+            className="orange"
             type="submit">Submit
           </button>
         </form>
